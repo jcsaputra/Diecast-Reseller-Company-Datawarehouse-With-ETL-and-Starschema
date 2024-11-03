@@ -1,0 +1,4 @@
+"PaymentID","PaymentMethod","CreditCardType","PaymentStatus","OrderDate"
+"1","Credit Card","Visa","Paid","2023-01-15"
+"2","PayPal","MasterCard","Paid","2023-02-20"
+"3","Credit Card","Amex","Paid","2023-03-10"

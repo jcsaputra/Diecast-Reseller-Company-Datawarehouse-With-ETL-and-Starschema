@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="DiecastSales">
+  <!-- Time Dimension -->
+  <Dimension name="Time" type="TimeDimension">
+    <Hierarchy hasAll="true" primaryKey="OrderDate">
+      <Table name="time"/>
+      <Level name="Year" column="Year" type="Numeric" uniqueMembers="true" levelType="TimeYears"/>
+      <Level name="Quarter" column="Quarter" type="Numeric" uniqueMembers="false" levelType="TimeQuarters"/>
+      <Level name="Month" column="Month" type="Numeric" uniqueMembers="false" levelType="TimeMonths"/>
+      <Level name="Day" column="Day" type="Numeric" uniqueMembers="false" levelType="TimeDays"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Customer">
+    <Hierarchy hasAll="true" primaryKey="CustomerID">
+      <Table name="customer"/>
+      <Level name="CustomerName" column="CustomerName" type="String" uniqueMembers="true"/>
+      <Level name="CustomerID" column="CustomerID" type="Numeric" uniqueMembers="true"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Product">
+    <Hierarchy hasAll="true" primaryKey="ProductID">
+      <Table name="product"/>
+      <Level name="ProductName" column="ProductName" type="String" uniqueMembers="true"/>
+      <Level name="ProductID" column="ProductID" type="Numeric" uniqueMembers="true"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Cube name="Sales" defaultMeasure="TotalAmount">
+    <Table name="tr_sales"/>
+    <DimensionUsage name="Time" source="Time" foreignKey="OrderDate"/>
+    <DimensionUsage name="Customer" source="Customer" foreignKey="CustomerID"/>
+    <DimensionUsage name="Product" source="Product" foreignKey="ProductID"/>
+    <Measure name="TotalAmount" column="TotalAmount" aggregator="sum" formatString="#,###.##"/>
+  </Cube>
+</Schema>

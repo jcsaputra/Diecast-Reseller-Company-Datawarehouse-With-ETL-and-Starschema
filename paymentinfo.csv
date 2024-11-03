@@ -1,0 +1,4 @@
+"PaymentID","PaymentMethod","CreditCardType","PaymentStatus","OrderDate","Year","Quarter","Month","Day","AmountID","TotalAmount","QuantitySold"
+"1","Credit Card","Visa","Paid","2023-01-15 00:00:00","2023","1","1","15",NULL,NULL,NULL
+"2","PayPal","MasterCard","Paid","2023-02-20 00:00:00","2023","1","2","20",NULL,NULL,NULL
+"3","Credit Card","Amex","Paid","2023-03-10 00:00:00","2023","1","3","10",NULL,NULL,NULL

@@ -1,0 +1,4 @@
+"CustomerID","CustomerName","Email","Address","Phone","RegistrationDate"
+"1","Julius","julius@mail.com","123 Main St, City, Country","555-123-4567","2023-01-15"
+"2","Vinh","vinh@mail.com","456 Elm St, Town, Country","555-987-6543","2023-02-20"
+"3","Bob","bobn@mail.com","789 Oak St, Village, Country","555-234-5678","2023-03-10"
